@@ -1,5 +1,5 @@
 {
   "projects": {
-    "scrapper": "allora-conjugator"
+    "default": "allora-conjugator"
   }
 }
