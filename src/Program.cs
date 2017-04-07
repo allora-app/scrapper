@@ -10,6 +10,7 @@ namespace Blinnikov.Scrapper
             var scrapper = new ScrapperService();
             var text = scrapper.Run().Result;
 
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine(text);
         }
     }

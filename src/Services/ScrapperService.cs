@@ -24,13 +24,13 @@ namespace Blinnikov.Scrapper.Services
 
         public async Task<string> Run()
         {
-            var httpClient = new HttpClient();
             var fare = 3832;
             var url = this.GetUrl(fare);
-            var page = await httpClient.GetAsync(url);
+            var page = await this._httpClient.GetAsync(url);
             var elements = await this.GetDocument(page.Content);
 
-            return string.Join(Environment.NewLine, elements.Select(el => el.OuterHtml));
+            var i = 0;
+            return string.Join(Environment.NewLine, elements.Select(el => $"{++i}. {el.InnerHtml}"));
         }
 
         private string GetUrl(int wordId) 
@@ -41,10 +41,10 @@ namespace Blinnikov.Scrapper.Services
         private async Task<IEnumerable<IElement>> GetDocument(HttpContent content) 
         {
             var parser = new HtmlParser();
-            var body = await content.ReadAsStringAsync();
-            var document = await parser.ParseAsync(body);
+            var page = await content.ReadAsStringAsync();
+            var document = await parser.ParseAsync(page);
 
-            return document.QuerySelectorAll(".section");
+            return document.QuerySelectorAll("div.span_1_of_2 table tr td").Take(115);
         }
     }
 }
