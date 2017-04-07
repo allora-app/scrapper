@@ -1,4 +1,3 @@
-using System;
 using Blinnikov.Scrapper.Models;
 
 namespace Blinnikov.Scrapper.Services
