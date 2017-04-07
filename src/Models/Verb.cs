@@ -6,8 +6,9 @@ namespace Blinnikov.Scrapper.Models
         public FiniteForm PresentPerfect { get; set; }
         public FiniteForm AbsolutePast { get; set; }
         public FiniteForm Imperfect { get; set; }
+        // Trapassato Remoto
         public FiniteForm PreteritePerfect { get; set; }
-        // Past Perfect
+        // Past Perfect - Trapassato Prossimo
         public FiniteForm Pluperfect { get; set; }
         public FiniteForm Future { get; set;}
         public FiniteForm FuturePerfect { get; set; }
