@@ -7,6 +7,7 @@ namespace Blinnikov.Scrapper.Services
 {
     public class ScrapperService : IScrapperService
     {
+        private const int MaxWordId = 12330;
         private readonly IRecordsLoader _recordsLoader;
         private readonly IRecordNormalizer _normalizer;
         private readonly IVerbBuilder _verbBuilder;
