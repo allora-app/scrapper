@@ -33,7 +33,7 @@ namespace Blinnikov.Scrapper.Store
 
         private HttpRequestMessage CreateRequest<T>(string key, T item)
         {
-            string path = $"/ratings/{key}.json";
+            string path = $"/verbs/{key}.json";
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, path);
             var json = JsonConvert.SerializeObject(item);
             request.Content = new StringContent(json);
