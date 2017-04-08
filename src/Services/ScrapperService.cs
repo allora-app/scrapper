@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Blinnikov.Scrapper.Models;
 using Blinnikov.Scrapper.Services.Rating;
@@ -35,7 +34,6 @@ namespace Blinnikov.Scrapper.Services
 
         private async Task ScrapeVerbs()
         {
-            var fare = 3832;
             var vedere = 12107;
             var records = await this._recordsLoader.Load(vedere);
             
