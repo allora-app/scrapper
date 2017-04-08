@@ -15,7 +15,7 @@ namespace Blinnikov.Scrapper.Store
             this._httpClient = this.ConfigureHttpClient(appId);
         }
 
-        public async Task<T> Save<T>(string key, T item) where T: class
+        public async Task<T> Save<T>(string key, T item)
         {
             var request = this.CreateRequest(key, item);
             var response = await this._httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead);
@@ -31,9 +31,9 @@ namespace Blinnikov.Scrapper.Store
             return client;
         }
 
-        private HttpRequestMessage CreateRequest<T>(string key, T item) where T: class
+        private HttpRequestMessage CreateRequest<T>(string key, T item)
         {
-            string path = $"/words/{key}.json";
+            string path = $"/ratings/{key}.json";
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, path);
             var json = JsonConvert.SerializeObject(item);
             request.Content = new StringContent(json);
