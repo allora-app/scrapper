@@ -29,7 +29,8 @@ namespace Blinnikov.Scrapper.Services
             var vedere = 12107;
             var records = await this._recordsLoader.Load(vedere);
             var verb = this._verbBuilder.Build(records);
-            var savedVerb = await this._firebaseClient.Save<Verb>(verb);
+            string key = verb.Infinite.Present;
+            var savedVerb = await this._firebaseClient.Save<Verb>(key, verb);
 
             var json = JsonConvert.SerializeObject(verb, Formatting.Indented);
             Console.WriteLine("Built Verb:");
