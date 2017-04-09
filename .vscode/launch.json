@@ -7,7 +7,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.1\\scrapper.dll",
+            "program": "${workspaceRoot}/src/bin/Debug/netcoreapp1.1/scrapper.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "console": "internalConsole",

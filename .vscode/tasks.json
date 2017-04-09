@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}\\scrapper.csproj"
+                "${workspaceRoot}\\src\\scrapper.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
