@@ -7,7 +7,6 @@ namespace Blinnikov.Scrapper.Store
 {
     public class FirebaseClient : IFirebaseClient
     {
-        // https://allora-conjugator.firebaseio.com/messages/-Kh25SFdTETmGoXcfMaj/original.json
         private readonly HttpClient _httpClient;
 
         public FirebaseClient(string appId)
@@ -33,7 +32,7 @@ namespace Blinnikov.Scrapper.Store
 
         private HttpRequestMessage CreateRequest<T>(string key, T item)
         {
-            string path = $"/verbs/{key}.json";
+            string path = $"/verbs_it/{key}.json";
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, path);
             var json = JsonConvert.SerializeObject(item);
             request.Content = new StringContent(json);
